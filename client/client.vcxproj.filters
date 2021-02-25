@@ -78,9 +78,6 @@
     <ClCompile Include="rendering\CRenderManager.cpp">
       <Filter>rendering</Filter>
     </ClCompile>
-    <ClCompile Include="rendering\debug\CDebugScreen.cpp">
-      <Filter>rendering\debug</Filter>
-    </ClCompile>
     <ClCompile Include="rendering\imgui\CImGui.cpp">
       <Filter>rendering\imgui</Filter>
     </ClCompile>
@@ -155,9 +152,6 @@
     </ClInclude>
     <ClInclude Include="rendering\CRenderManager.h">
       <Filter>rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="rendering\debug\CDebugScreen.h">
-      <Filter>rendering\debug</Filter>
     </ClInclude>
     <ClInclude Include="rendering\imgui\CImGui.h">
       <Filter>rendering\imgui</Filter>

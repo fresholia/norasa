@@ -30,7 +30,6 @@
     <ClCompile Include="options\COptions.cpp" />
     <ClCompile Include="patches\CGamePatches.cpp" />
     <ClCompile Include="rendering\CRenderManager.cpp" />
-    <ClCompile Include="rendering\debug\CDebugScreen.cpp" />
     <ClCompile Include="rendering\imgui\CImGui.cpp" />
     <ClCompile Include="rendering\ingame\CNameTags.cpp" />
     <ClCompile Include="tasks\CSerializedComplexCopInCar.cpp" />
@@ -51,7 +50,6 @@
     <ClInclude Include="options\COptions.h" />
     <ClInclude Include="patches\CGamePatches.h" />
     <ClInclude Include="rendering\CRenderManager.h" />
-    <ClInclude Include="rendering\debug\CDebugScreen.h" />
     <ClInclude Include="rendering\imgui\CImGui.h" />
     <ClInclude Include="rendering\ingame\CNameTags.h" />
     <ClInclude Include="rendering\ingame\tasks.h" />
@@ -71,14 +69,14 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">

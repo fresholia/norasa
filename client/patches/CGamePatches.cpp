@@ -152,7 +152,7 @@ void Hooked_LoadSplashes(bool bStarting, bool bNvidia)
 	CTxdStore::SetCurrentTxd(index);
 	for (int i = 0; i < 7; i++)
 	{
-		CLoadingScreen::m_aSplashes[i].SetTexture("altsplash");
+	//	CLoadingScreen::m_aSplashes[i].SetTexture("altsplash");
 	}
 	CTxdStore::PopCurrentTxd();
 	CFileMgr::SetDir("");
@@ -410,7 +410,8 @@ void CGamePatches::RunningScriptHook()
 
 void Hook_CRestart__FindClosestHospitalRestartPoint(float a1, float a2, float a3, RwV3d *a4, float *a5)
 {
-	a4 = &CRestart::OverridePosition->ToRwV3d();
+	//a4 = &CRestart::OverridePosition->ToRwV3d();
+
 	a5 = &CRestart::OverrideHeading;
 
 	a1 = 2488.562f;

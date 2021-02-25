@@ -191,7 +191,7 @@ void CRenderManager::Init()
     patch::ReplaceFunctionCall(0x7487A8, InitInstance_Hook);
 	patch::ReplaceFunctionCall(0x541DD7, Hooked_CPad__UpdateMouse, true);
 
-	m_pGuiContainer.push_back(new CDebugScreen());
+	//m_pGuiContainer.push_back(new CDebugScreen());
 	m_pGuiContainer.push_back(new CNameTags());
 	CRenderManager::m_pImGui = new CImGui();
 

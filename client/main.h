@@ -101,7 +101,7 @@ using namespace plugin;
 #include "entities/CPedManager.h"
 #include "entities/CPlayerPedManager.h"
 #include "gamelogic/CPopulationManager.h"
-#include "rendering/debug/CDebugScreen.h"
+//#include "rendering/debug/CDebugScreen.h"
 #include "rendering/ingame/CNameTags.h"
 
 #include "tasks/CTaskSerializer.h"
