@@ -86,8 +86,8 @@ bool CInjector::Run(const std::wstring & gameFolder, const std::wstring &altPath
         printf("Loading lib: %s\n", libName);
         std::string strLibName(libName);
         std::transform(strLibName.begin(), strLibName.end(), strLibName.begin(), ::tolower);
-        if (strLibName == "vorbisfile.dll")
-            return LoadLibraryW(L"libs\\vorbisFile.dll");
+        //if (strLibName == "vorbisfile.dll")
+        //    return LoadLibraryW(L"libs\\vorbisFile.dll");
         HMODULE module = LoadLibraryA(libName);
         if (!module) {
             std::stringstream ss;

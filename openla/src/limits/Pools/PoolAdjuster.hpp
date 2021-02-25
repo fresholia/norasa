@@ -84,7 +84,6 @@ struct PoolAdjuster : PoolAdjusterBase
 
     virtual void MakeUnlimited()
     {
-        throw std::runtime_error("Cannot set this pool to be unlimited");
     }
 };
 

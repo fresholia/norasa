@@ -17,7 +17,6 @@ static std::vector<std::wstring> requiredFiles =
 {
 	L"libs\\client.dll",
 	L"libs\\openLA.dll",
-	L"libs\\minidump.dll",
 #ifdef _DEBUG
 	L"libs\\windowed.dll",
 #endif

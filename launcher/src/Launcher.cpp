@@ -138,8 +138,8 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 #endif
 */
 
-	injector.PushLibrary(L"vorbisFile.dll");
-    injector.PushLibrary(L"minidump.dll");
+	//injector.PushLibrary(L"vorbisFile.dll");
+    //injector.PushLibrary(L"minidump.dll");
     injector.PushLibrary(L"client.dll");
     injector.PushLibrary(L"openLA.dll");
 

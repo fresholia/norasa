@@ -206,8 +206,6 @@ struct PoolAdjusterDynamic : PoolAdjuster<addr_call>
                 injector::MakeInline<0x4B5DBD, 0x4B5DF7>(ReleaseECX);
                 break;
 
-            default:
-                throw std::logic_error("Missing patcher for dynamic pool");
         }
     }
 
