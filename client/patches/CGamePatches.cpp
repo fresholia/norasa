@@ -44,7 +44,6 @@ void CGamePatches::Init()
 	//this->LimitPatches(); using OpenLA
 }
 
-// Thank you Botder
 bool Hooked_PSelectDevice()
 {
 	RwInt32 const numSubSystems = std::min<RwInt32>(RwEngineGetNumSubSystems(), 16);
@@ -217,14 +216,14 @@ void CGamePatches::LoadScreenPatches()
 	patch::ReplaceFunctionCall(0x748C9A, SimulateCopyrightScreen);
 
 	// Disable loading screen rendering
-	//patch::Nop(0x590D9F, 5);
-	//patch::Set<UINT8>(0x590D9F, 0xC3);
+	patch::Nop(0x590D9F, 5);
+	patch::Set<UINT8>(0x590D9F, 0xC3);
 	
 	// Skip fading screen rendering
 	//patch::RedirectJump(0x590AE4, (void*)0x590C9E);
 	
 	// Disable loading bar rendering
-	//patch::Nop(0x5905B4, 5);
+	patch::Nop(0x5905B4, 5);
 
 	// Disable audio tune from loading screen
 	patch::Nop(0x748CF6, 5);
@@ -491,9 +490,9 @@ void CGamePatches::GameLogicPatches()
 	patch::PutRetn(0x5A07D0);
 
 	// Disable CCheat::DoCheats
-	//patch::PutRetn(0x439AF0);
+	patch::PutRetn(0x439AF0);
 	// Disable CCheat::ToggleCheat
-	//patch::PutRetn(0x438370);
+	patch::PutRetn(0x438370);
 
 	// Disable the game's replay system (recording & playing - see CReplay stuff)
 	// F1 = Play the last 30 second of gameplay
@@ -733,7 +732,7 @@ void CGamePatches::GameCorePatches()
 	patch::SetChar(0x74825E, 0x4C - 0x3C); // use stack space for new lParam
 	
 	// Disable loading default.dat in CGame::Initialize
-	//patch::ReplaceFunctionCall(0x53BC95, DoNothing);
+	patch::ReplaceFunctionCall(0x53BC95, DoNothing);
 }
 
 void CGamePatches::WantedPatches()
@@ -965,7 +964,7 @@ void CGamePatches::InputPatches()
 
 void CGamePatches::PopulationPatches()
 {
-    /*
+    
 	// Disable CPopulation::Initialise x
 	patch::PutRetn(0x610E10);
 
@@ -1045,19 +1044,18 @@ void CGamePatches::PopulationPatches()
 
 	// Disable CCarCtrl::GenerateOneRandomCar
 	patch::PutRetn(0x430050);
-    */
+   
     patch::ReplaceFunctionCall(0x53C1C1, CCarCtrl__GenerateRandomCars_Hook);
     patch::ReplaceFunctionCall(0x53C030, CPopulation__Update_Hook);
     patch::ReplaceFunctionCall(0x53C054, CPopulation__Update_Hook);
     patch::ReplaceFunctionCall(0x615D4B, CPopulation__AddToPopulation_Hook);
     patch::ReplaceFunctionCall(0x61679B, CPopulation__AddToPopulation_Hook);
 
-    Patch_Funcs.push_back(
-        [](uint32_t Address) -> bool
-    {
-        return AdjustBranchPointer(Address, 0x612710, CPopulation__AddPed_Hook, false);
-    }
-    );
+	Patch_Funcs.push_back([](uint32_t Address) -> bool
+		{
+			return AdjustBranchPointer(Address, 0x612710, CPopulation__AddPed_Hook, false);
+		}
+	);
 }
 
 void CGamePatches::LimitPatches()
